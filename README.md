@@ -203,11 +203,11 @@ cp ./dist/index.html ./gas
 
 #### Change script build command in `package.json` file
 
-Every change is saved in the `./dist/index.html` file. This file has to be copied in the `./gas`
-folder.
+Every change is saved in the `./dist/index.html` file. With the command `npm run build` the `index.html` file is copied in the `./gas`
+folder and pushed to google apps script.
 
 ```json
 "scripts": {
-    "build": "vite build && mv ./dist/index.html ./gas",
+    "build": "vite build && mv ./dist/index.html ./gas && clasp push",
 }
 ```
