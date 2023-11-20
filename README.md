@@ -82,7 +82,7 @@ From here your can start build your web application, with Google Sheets as a bac
 After every change, build the project to create the index.html. Then this file is copied in the
 ./gas folder and all the files are pushed to google apps script automatically.
 
-### How to
+## How to
 
 These are the steps to reproduce the project:
 
