@@ -25,7 +25,7 @@ With this project your can use Vue3 with Google Sheets as a backend.
 Clone the repo
 
 ```shell
-git clone
+git clone https://github.com/ilias777/vue3GAS.git
 ```
 
 Navigate to the project folder.
