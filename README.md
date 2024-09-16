@@ -133,10 +133,10 @@ npm install --save-dev vite-plugin-singlefile
 #### The plugin has to be added in the `vite.config.js` file:
 
 ```javascript
-import { viteSingleFile } from "vite-plugin-singlefile";
+import { viteSingleFile } from 'vite-plugin-singlefile'
 export default defineConfig({
-  plugins: [vue(), viteSingleFile()],
-});
+  plugins: [vue(), viteSingleFile()]
+})
 ```
 
 #### Install [clasp](https://github.com/google/clasp) in your system, to push the files to Google Apps Script
@@ -177,6 +177,26 @@ Move from the `./gas/` folder the `.clasp.json` file to the root directory
 mv ./gas/.clasp.json .
 ```
 
+#### Pull the files from Apps Script
+
+```
+clasp pull
+```
+
+Now you have in your `./gas/` folder a `Code.js` file
+
+Copy the following code inside the file:
+
+```javascript
+function doGet(e) {
+  return HtmlService.createTemplateFromFile('index.html')
+    .evaluate()
+    .addMetaTag('viewport', 'width=device-width, initial-scale=1.0')
+    .setXFrameOptionsMode(HtmlService.XFrameOptionsMode.ALLOWALL)
+    .setTitle('Vue3 GAS')
+}
+```
+
 #### Push the files to Apps Script
 
 ```shell
@@ -203,11 +223,11 @@ cp ./dist/index.html ./gas
 
 #### Change script build command in `package.json` file
 
-Every change is saved in the `./dist/index.html` file. With the command `npm run build` the `index.html` file is copied in the `./gas`
-folder and pushed to google apps script.
-
 ```json
 "scripts": {
     "build": "vite build && mv ./dist/index.html ./gas && clasp push",
 }
 ```
+
+Every change is saved in the `./dist/index.html` file. With the command `npm run build` the `index.html` file is copied in the `./gas`
+folder and pushed to google apps script.
