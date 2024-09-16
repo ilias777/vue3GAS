@@ -50,7 +50,7 @@ Create a Google Sheets Document.
 
 - Go to [docs.google.com](https://docs.google.com/) and create a Google Sheets document
 - Inside the Sheets document press in the menu bar, under extensions, _Apps Script_
-- A new tab appears with the Apps Script code. **Copy the URL address**.
+- A new tab appears with the Google Apps Script code. **Copy the script ID** (https://script.google.com/macros/s/<scriptID>/edit).
 - Press the `Deploy` button and create a web app.
 
 Login to your Google account from your terminal.
@@ -62,7 +62,7 @@ clasp login
 Clone the Sheets script with clasp in the `./gas` folder.
 
 ```shell
-clasp clone --rootDir ./gas <scriptUrl>
+clasp clone --rootDir ./gas <scriptID>
 ```
 
 Move from the `./gas` folder the `.clasp.json` file to the root directory
@@ -79,8 +79,9 @@ npm run build
 
 From here your can start build your web application, with Google Sheets as a backend.
 
-After every change, build the project to create the index.html. Then this file is copied in the
-./gas folder and all the files are pushed to google apps script automatically.
+If you are finish with your changes in your App, run `npm run build` to build the project and
+a `index.html` are created in the `./dist/` folder. Then this file is copied in the `./gas` folder
+and all the files are pushed to google apps script automatically.
 
 ## How to
 
@@ -122,7 +123,7 @@ npm install
 
 - Delete all folders and files from `./src/components/` folder.
 
-- Delete `./src/stores/counter.js` file.
+- Remove `./src/stores/counter.js` file.
 
 #### Install Vue plugin for inline HTML, CSS and JavaScript
 
@@ -149,7 +150,7 @@ npm install -g @google/clasp
 
 - Go to [docs.google.com](https://docs.google.com/) and create a Google Sheets document
 - Inside the Sheets document press in the menu bar, under extensions, _Apps Script_
-- A new tab appears with the Apps Script code. **Copy the URL address**.
+- A new tab appears with the Apps Script code. **Copy the scriptID**.
 
 #### Connect the Google Sheets script to your project
 
@@ -162,9 +163,9 @@ clasp login
 #### Enable Google Apps Script API
 
 Go to [https://script.google.com/home/usersettings](https://script.google.com/home/usersettings)
-enable turn the Google Apps Script API on.
+and turn on the Google Apps Script API.
 
-More information and command can you read in the [clasp repo](https://github.com/google/clasp)
+More information and the commands can you read in the [clasp repo](https://github.com/google/clasp)
 
 Create a `./gas/` folder in the root directory.
 
@@ -192,7 +193,7 @@ clasp pull
 
 Now you have in your `./gas/` folder a `Code.js` file
 
-Copy the following code inside the file:
+Copy the following code inside this file:
 
 ```javascript
 function doGet(e) {
@@ -237,4 +238,4 @@ cp ./dist/index.html ./gas
 ```
 
 Every change is saved in the `./dist/index.html` file. With the command `npm run build` the `index.html` file is copied in the `./gas`
-folder and pushed to google apps script.
+folder and pushed to google apps script automatically.
