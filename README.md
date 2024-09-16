@@ -159,6 +159,13 @@ Sing in to Google from your terminal with clasp.
 clasp login
 ```
 
+#### Enable Google Apps Script API
+
+Go to [https://script.google.com/home/usersettings](https://script.google.com/home/usersettings)
+enable turn the Google Apps Script API on.
+
+More information and command can you read in the [clasp repo](https://github.com/google/clasp)
+
 Create a `./gas/` folder in the root directory.
 
 ```shell
