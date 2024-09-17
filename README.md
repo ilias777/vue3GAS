@@ -22,38 +22,49 @@ With this project your can use Vue3 with Google Sheets as a backend.
 
 ### Setup
 
-Clone the repo
+#### Clone the repo
 
 ```shell
 git clone https://github.com/ilias777/vue3GAS.git
 ```
 
-Navigate to the project folder.
+#### Navigate to the project folder.
 
 ```shell
 cd vue3GAS
 ```
 
-Install dependencies.
+#### Install dependencies.
 
 ```shell
 npm install
 ```
 
-Install [clasp](https://github.com/google/clasp) in your system.
+#### Remove the `.clasp.json` file in the root directory, to create later your own file with your scriptID.
+
+```shell
+rm .clasp.json
+```
+
+#### Install [clasp](https://github.com/google/clasp) in your system.
 
 ```shell
 npm install -g @google/clasp
 ```
 
-Create a Google Sheets Document.
+#### Create a Google Sheets Document.
 
 - Go to [docs.google.com](https://docs.google.com/) and create a Google Sheets document
 - Inside the Sheets document press in the menu bar, under extensions, _Apps Script_
-- A new tab appears with the Google Apps Script code. **Copy the script ID** (https://script.google.com/macros/s/<scriptID>/edit).
-- Press the `Deploy` button and create a web app.
+- A new tab appears with the Google Apps Script code. **Copy the script ID** (https://script.google.com/macros/s/{scriptID}/edit).
+- Press the `Deploy` button, in the upper right corner, to create a web app.
 
-Login to your Google account from your terminal.
+#### Enable Google Apps Script API
+
+Go to [https://script.google.com/home/usersettings](https://script.google.com/home/usersettings)
+and turn on the Google Apps Script API.
+
+#### Login to your Google account from your terminal.
 
 ```shell
 clasp login
@@ -80,32 +91,34 @@ npm run build
 From here your can start build your web application, with Google Sheets as a backend.
 
 If you are finish with your changes in your App, run `npm run build` to build the project and
-a `index.html` are created in the `./dist/` folder. Then this file is copied in the `./gas` folder
+a `index.html` are created in the `./dist` folder. Then this file is moved to the `./gas` folder
 and all the files are pushed to google apps script automatically.
+
+After the files are pushed, refresh the page of the Google Apps Script site, deploy your app again and you are done.
 
 ## How to
 
-These are the steps to reproduce the project:
+**These are the steps to reproduce the project:**
 
-#### Create Vue Application
+#### Create Vue Application:
 
 ```shell
 npm create vue@latest
 ```
 
-Navigate to your project directory
+#### Navigate to your project directory:
 
 ```shell
 cd <your-project-folder>
 ```
 
-and install the node dependencies
+#### Install the node dependencies:
 
 ```shell
 npm install
 ```
 
-#### Delete unnecessary code for a clean project
+#### Delete unnecessary code for a clean project:
 
 - Remove content from `./src/App.vue`.
 
@@ -117,21 +130,19 @@ npm install
 </template>
 ```
 
-- Remove content from `./src/assets/main.css`.
+- Remove content from `./src/assets/main.css` and keep only the first line `@import './base.css';` In your `base.css` file you can add css styles if needed.
 
 - Delete `./src/assets/logo.svg` file.
 
 - Delete all folders and files from `./src/components/` folder.
 
-- Remove `./src/stores/counter.js` file.
-
-#### Install Vue plugin for inline HTML, CSS and JavaScript
+#### Install Vue plugin for inline HTML, CSS and JavaScript:
 
 ```shell
 npm install --save-dev vite-plugin-singlefile
 ```
 
-#### The plugin has to be added in the `vite.config.js` file:
+### Add the plugin in the `vite.config.js` file:
 
 ```javascript
 import { viteSingleFile } from 'vite-plugin-singlefile'
@@ -167,33 +178,33 @@ and turn on the Google Apps Script API.
 
 More information and the commands can you read in the [clasp repo](https://github.com/google/clasp)
 
-Create a `./gas/` folder in the root directory.
+#### Create a `./gas` folder in the root directory.
 
 ```shell
 mkdir gas
 ```
 
-Clone the Sheets script with clasp in the `./gas/` folder.
+#### Clone the Sheets script with clasp in the `./gas` folder.
 
 ```shell
 clasp clone --rootDir ./gas <scriptUrl>
 ```
 
-Move from the `./gas/` folder the `.clasp.json` file to the root directory
+#### Move from the `./gas` folder the `.clasp.json` file to the root directory
 
 ```shell
 mv ./gas/.clasp.json .
 ```
 
-#### Pull the files from Apps Script
+#### Pull the files from Apps Script:
 
 ```
 clasp pull
 ```
 
-Now you have in your `./gas/` folder a `Code.js` file
+Now you have in your `./gas` folder a `Code.js` file
 
-Copy the following code inside this file:
+#### Copy the following code inside this file:
 
 ```javascript
 function doGet(e) {
@@ -205,31 +216,31 @@ function doGet(e) {
 }
 ```
 
-#### Push the files to Apps Script
+#### Push the files to Apps Script:
 
 ```shell
 clasp push
 ```
 
-#### Install Google types as a dependency
+#### Install Google types as a dependency:
 
 ```shell
 npm install --save-dev @types/google-apps-script
 ```
 
-#### Build the project to create a `./dist` folder
+#### Build the project to create a `./dist` folder:
 
 ```shell
 npm run build
 ```
 
-Copy `./dist/index.html` file to `./gas/` folder
+Copy `./dist/index.html` file to `./gas` folder
 
 ```shell
 cp ./dist/index.html ./gas
 ```
 
-#### Change script build command in `package.json` file
+#### Change build script command in `package.json` file:
 
 ```json
 "scripts": {
