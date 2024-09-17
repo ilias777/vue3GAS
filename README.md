@@ -22,25 +22,25 @@ With this project your can use Vue3 with Google Sheets as a backend.
 
 ### Setup
 
-#### Clone the repo
+#### Clone the repo:
 
 ```shell
 git clone https://github.com/ilias777/vue3GAS.git
 ```
 
-#### Navigate to the project folder.
+#### Navigate to the project folder:
 
 ```shell
 cd vue3GAS
 ```
 
-#### Install dependencies.
+#### Install dependencies:
 
 ```shell
 npm install
 ```
 
-#### Remove the `.clasp.json` file in the root directory, to create later your own file with your scriptID.
+#### Remove the `.clasp.json` file in the root directory, to create later your own `.clasp.json` file with your scriptID:
 
 ```shell
 rm .clasp.json
@@ -142,7 +142,7 @@ npm install
 npm install --save-dev vite-plugin-singlefile
 ```
 
-### Add the plugin in the `vite.config.js` file:
+#### Add the plugin in the `vite.config.js` file:
 
 ```javascript
 import { viteSingleFile } from 'vite-plugin-singlefile'
