@@ -96,6 +96,13 @@ and all the files are pushed to google apps script automatically.
 
 After the files are pushed, refresh the page of the Google Apps Script site, deploy your app again and you are done.
 
+<hr>
+
+> [!TIP]
+> If you want to use a css framework like DaisyUI, you can see me other repo [here](https://github.com/ilias777/Vue3GASDaisyUI).
+
+<hr>
+
 ## How to
 
 **These are the steps to reproduce the project:**
