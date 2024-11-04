@@ -18,6 +18,10 @@ With this project your can use Vue3 with Google Sheets as a backend.
 ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 ![Clasp](https://img.shields.io/badge/CLASP-darkblue?style=for-the-badge&logo=google&logoColor=white)
 
+> [!TIP]
+> If you want to use a CSS framework like [DaisyUI](https://daisyui.com/) and [tailwindcss](https://tailwindcss.com/),
+> you can see me other repo to use it &rarr; [here](https://github.com/ilias777/Vue3GASDaisyUI).
+
 ## Introduction
 
 ### Setup
@@ -95,13 +99,6 @@ a `index.html` are created in the `./dist` folder. Then this file is moved to th
 and all the files are pushed to google apps script automatically.
 
 After the files are pushed, refresh the page of the Google Apps Script site, deploy your app again and you are done.
-
-<hr>
-
-> [!TIP]
-> If you want to use a css framework like DaisyUI, you can see me other repo [here](https://github.com/ilias777/Vue3GASDaisyUI).
-
-<hr>
 
 ## How to
 
