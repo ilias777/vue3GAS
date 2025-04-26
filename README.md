@@ -113,13 +113,13 @@ npm run build
 Then deploy your app:
 
 ```shell
-clasp deploy --description "Message"
+clasp create-deployment --description "Message"
 ```
 
 or
 
 ```shell
-clasp deploy -d "Message"
+clasp create-deployment -d "Message"
 ```
 
 **The second time you have to add the deployment ID to the command.**
@@ -133,21 +133,23 @@ clasp deployments
 A list appears with your deployments. Copy the ID from your last deployment and add it to the command:
 
 ```shell
-clasp deploy <deployment-id> -d "Message"
+clasp create-deployment -d "Message" -i <deployment-id>
 ```
 
 To see your Web-App in the browser type:
 
 ```shell
-clasp open --webapp
+clasp open-script
 ```
+
+The script opens in your browser and press "Deploy" - "Manage Deployments". Click in the URL and your app opens in a new tab.
 
 ## Test your App before make a new deployment
 
 To test your Web-App before deploy it, go first to Google Script page:
 
 ```shell
-clasp open
+clasp open-script
 ```
 
 The script opens in the browser. Press "Deploy" and then "Test Deployment". Now click the URL to open the Web-App.
