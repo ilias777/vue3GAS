@@ -100,6 +100,72 @@ and all the files are pushed to google apps script automatically.
 
 After the files are pushed, refresh the page of the Google Apps Script site, deploy your app again and you are done.
 
+## Manage and make new deployments
+
+**On the first time you have to push your files to Google Script**.
+
+Run in the terminal:
+
+```shell
+npm run build
+```
+
+Then deploy your app:
+
+```shell
+clasp deploy --description "Message"
+```
+
+or
+
+```shell
+clasp deploy -d "Message"
+```
+
+**The second time you have to add the deployment ID to the command.**
+
+First see all deployments:
+
+```shell
+clasp deployments
+```
+
+A list appears with your deployments. Copy the ID from your last deployment and add it to the command:
+
+```shell
+clasp deploy <deployment-id> -d "Message"
+```
+
+To see your Web-App in the browser type:
+
+```shell
+clasp open --webapp
+```
+
+## Test your App before make a new deployment
+
+To test your Web-App before deploy it, go first to Google Script page:
+
+```shell
+clasp open
+```
+
+The script opens in the browser. Press "Deploy" and then "Test Deployment". Now click the URL to open the Web-App.
+
+The Web-App opens in a new tab.
+
+**Keep it open in your browser.**
+
+Go to your editor and make the needed changes. If you want to see how it looks, push the files to Google Script:
+
+```shell
+npm run build
+```
+
+Now go to your browser, reload the page and now all the changes are applied.
+
+With this method you can test your Web-App before creating a new deployment.
+
 ## How to
 
 **These are the steps to reproduce the project:**
@@ -127,10 +193,12 @@ npm install
 - Remove content from `./src/App.vue`.
 
 ```vue
-<script setup></script>
-
 <template>
-  <h1>Hello from Vue</h1>
+  <nav>
+    <router-link to="/">Home</router-link> |
+    <router-link to="/about">About</router-link>
+  </nav>
+  <router-view />
 </template>
 ```
 
