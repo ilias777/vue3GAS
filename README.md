@@ -100,9 +100,9 @@ and all the files are pushed to google apps script automatically.
 
 After the files are pushed, refresh the page of the Google Apps Script site, deploy your app again and you are done.
 
-## Manage and make new deployments
+## Make and update a deployment
 
-**On the first time you have to push your files to Google Script**.
+**Make a new deployment**.
 
 Run in the terminal:
 
@@ -122,7 +122,7 @@ or
 clasp create-deployment -d "Message"
 ```
 
-**The second time you have to add the deployment ID to the command.**
+**Update an existing deployment**
 
 First see all deployments:
 
