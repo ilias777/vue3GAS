@@ -20,7 +20,7 @@ With this project your can use Vue3 with Google Sheets as a backend.
 
 > [!TIP]
 > If you want to use a CSS framework like [DaisyUI](https://daisyui.com/) and [tailwindcss](https://tailwindcss.com/),
-> you can see me other repo to use it &rarr; [here](https://github.com/ilias777/Vue3GASDaisyUI).
+> you can see my other repo to use it &rarr; [here](https://github.com/ilias777/Vue3GASDaisyUI).
 
 ## Introduction
 
